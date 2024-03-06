@@ -47,10 +47,10 @@ selected_model = models[selected_language]
 
 text_input = st.text_area("Type a text to anonymize")
 
-uploaded_file = st.file_uploader("or Upload a file", type=["doc", "docx", "pdf", "txt"])
-if uploaded_file is not None:
-    text_input = uploaded_file.getvalue()
-    text_input = text_input.decode("utf-8")
+# uploaded_file = st.file_uploader("or Upload a file", type=["doc", "docx", "pdf", "txt"])
+# if uploaded_file is not None:
+#     text_input = uploaded_file.getvalue()
+#     text_input = text_input.decode("utf-8")
 
 anonymize = st.checkbox("Anonymize")
 doc = selected_model(text_input)
