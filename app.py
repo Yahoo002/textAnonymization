@@ -7,7 +7,7 @@ from annotated_text import annotated_text
 def load_models():
     french_model = spacy.load("./models/fr/")
     english_model = spacy.load("./models/en")
-    models = {"English": english_model, "French": french_model}
+    models = {"English": english_model}
     return models
 
 
@@ -37,7 +37,7 @@ def process_text(doc, selected_entities, anonymize=False):
 
 models = load_models()
 
-selected_language = st.sidebar.selectbox("Select a language", options=["English", "French"])
+selected_language = st.sidebar.selectbox("Select a language", options=["English"])
 selected_entities = st.sidebar.multiselect(
     "Select the entities you want to detect",
     options=["LOC", "PER", "ORG"],
